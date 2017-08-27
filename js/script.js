@@ -485,7 +485,12 @@ fileuploader-list-files
             contentType: false, // Set content type to false as jQuery will tell the server its a query string request
             success: function(sonuc, textStatus, jqXHR)
             {
+            if(sonuc != "Hata"){
             	alert("Çeviri talebiniz başarıyla alındı");
+            }else{
+            	window.location = "giris.php";
+            }
+
                 $('body').waitMe('hide');
             },
             error: function(jqXHR, textStatus, errorThrown)

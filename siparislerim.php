@@ -8,7 +8,7 @@ $il = $DB->qry('SELECT * FROM iller',2,'id');
 $ilce = $DB->qry('SELECT * FROM ilceler',2,'id');
 
 $toplamFiyat = 0;
-$siparisler = $DB->qry('SELECT *, DATE_FORMAT(tarih,\'%d.%m.%Y %H:%i\') as trh FROM siparisler WHERE uyeid='.$DB->str($UB ['id'],'int'),1);
+$siparisler = $DB->qry('SELECT *, DATE_FORMAT(tarih,\'%d.%m.%Y %H:%i\') as trh FROM siparis WHERE musteri_id='.$DB->str($UB ['id'],'int'),1);
 foreach($siparisler as $s){
 	if($s['tip'] == '2'){
 		$toplamFiyat = ($toplamFiyat + intval($s['fiyat']));

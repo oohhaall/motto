@@ -11,7 +11,25 @@ if($_POST['islem'] == 'giris'){
 		if($giris['id']){
 			$_SESSION['UGIRIS'] = TRUE;
 			$_SESSION['UBLG'] = $giris;
-			header('Location: ./'.((!empty($_GET['l']))?$_GET['l'].'.php':'')); exit;
+
+			if(isset($_SESSION["siparisData"])){
+					$var_list = json_decode($_SESSION["siparisData"]["dosya_list"],true);
+	$siparisler = $DB->qry("INSERT INTO siparis(dosya_list,ceviri_text,serviceTypeId,fileLanguageId,interpretLanguageId,qualityTypeId,categoryTypeId,durationTypeId,extraService_1,extraService_2,extraService_3,description,musteri_id) VALUES('".json_encode($var_list,true)."','".$_SESSION["siparisData"]["ceviri_text"]."','".$_SESSION["siparisData"]["serviceTypeId"]."','".$_SESSION["siparisData"]["fileLanguageId"]."','".json_encode($_SESSION["siparisData"]["interpretLanguageId"],true)."','".$_SESSION["siparisData"]["qualityTypeId"]."','".$_SESSION["siparisData"]["categoryTypeId"]."','".$_SESSION["siparisData"]["durationTypeId"]."','".$_SESSION["siparisData"]["extraService_1"]."','".$_SESSION["siparisData"]["extraService_2"]."','".$_SESSION["siparisData"]["extraService_3"]."','".$_SESSION["siparisData"]["description"]."','".$giris['id']."')",4);
+				unset($_SESSION['siparisData']);
+	?>
+				<script type="text/javascript">
+					alert("Siparişiniz başarıyla alındı");
+					window.location = "index.php";
+				</script>
+	
+
+			<?php
+	
+		
+			}
+			
+		
+			///header('Location: ./'.((!empty($_GET['l']))?$_GET['l'].'.php':'')); exit;
 		}else{
 			$hata = 'Eposta adesinizi veya şifrenizi yanlış girdiniz!';
 		}
@@ -21,6 +39,7 @@ if($_POST['islem'] == 'giris'){
 	}
 
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +62,7 @@ if($_POST['islem'] == 'giris'){
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/jquery.fancybox.min.css">
 <link rel="stylesheet" href="css/animate.css"><!--SLAYT-->
-<?php include('inc/ust.php')?>
+<?php include('inc/ust.php') ?>
 
 <div class="container">
 

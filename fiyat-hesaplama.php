@@ -1,6 +1,14 @@
 <?php
 require_once('inc/ayar.php');
 //require_once('inc.class/qryClass.php');
+/*
+echo "SESSION = > ";
+print_r($_SESSION);
+echo "<hr>";
+echo "COOKIE = > ";
+print_r($_COOKIE);
+*/
+
 ?>
 <!DOCTYPE html>
 <html>
