@@ -755,3 +755,8 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);}
 #steps .stepWr .stepContent .work ul li label{font-size: 15px;}
 
 #orderBox .onayla button[disabled]{cursor: pointer;}
+.product-list {width: 100%; margin-top: 20px;}
+.product-list .head{font-weight: 600; background-color: #CCC;}
+.product-list td{line-height: 30px; padding:0 5px;}
+.product-list tr:nth-child(2n+1){background-color: #dedede;}
+.product-list tr:nth-child(2n){background-color: #f4f4f4;}

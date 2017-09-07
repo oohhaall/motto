@@ -90,17 +90,17 @@ $siparislerBekleyentoplam = $DB->qry('SELECT * FROM siparis WHERE durum="1" AND 
         <div class="page_name">
             <a href="#">Ana sayfa</a> >
             <a href="#">Hakkımızda</a> >
-            <a href="#">Tüm Siparişlerim</a>
+            <a href="#">Tamamlanan Siparişler</a>
         </div>
     	
         <div class="page-ics">
 
 <div class="clearfix">
                                                     <ul class="nav nav-pills pull-left orders">
-                                <li class="active">
+                                <li class="">
                                     <a href="siparislerim.php"><span class="badge pull-right">(<?php echo $siparislerTumtoplam ?>)</span>Toplam</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="tamamlanan.php">
                                         <span class="badge pull-right">(<?php echo $siparislerTamamlanantoplam ?>)</span>Tamamlanan
                                     </a>
@@ -112,14 +112,16 @@ $siparislerBekleyentoplam = $DB->qry('SELECT * FROM siparis WHERE durum="1" AND 
                                 </li>
                                                             </ul>
                                                                     </div>
-<?php if($siparislerTumtoplam!=0){ ?>
 
+<?php if($siparislerTamamlanantoplam!=0){ ?>
+
+       
 
         <table class="product-list">
             <tr class="head"><td>Çeviri Süresi</td><td>Sipariş Türü</td><td>Uzmanlık Alanı</td><td>Durum</td></tr>
             <?php 
 
-        foreach ($siparislerTum as $key => $value) {
+        foreach ($siparislerTamamlanan as $key => $value) {
             ?>
         <tr>
         <td><?php echo $value["durationTypeId"]; ?></td>
@@ -133,7 +135,7 @@ $siparislerBekleyentoplam = $DB->qry('SELECT * FROM siparis WHERE durum="1" AND 
         </table>
 
 
-        <?php } ?>
+      <?php } ?>  
         
         </div>
         

@@ -103,7 +103,7 @@ Linkedin'da firmamızı takip edebilirsiniz,
 
 <!-- Latest compiled and minified JavaScript -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 
 
     <script src="js/app.min.js"></script>
@@ -126,7 +126,8 @@ Linkedin'da firmamızı takip edebilirsiniz,
 
 <script src="js/script.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js'></script>
+<script src='js/jquery.cycle2.min.js'></script>
+<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js'></script>-->
 
 
     <!-- Initialize Swiper -->

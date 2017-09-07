@@ -2,7 +2,7 @@
 require_once('inc/genel.php');
 require_once('inc/guvenlik.php');
 
-$veri = $DB->qry("SELECT *, DATE_FORMAT(tarih, '%d.%m.%Y / %H:%i') as trh FROM siparis WHERE id=".STR($_GET['sid'],'int'),4);
+$veri = $DB->qry("SELECT * FROM siparis,uyeler WHERE siparis.id='".STR($_GET['sid'],'int')."' AND uyeler.id=siparis.musteri_id",4);
 
 $il = $DB->qry('SELECT * FROM iller WHERE id='.$DB->str($veri['sehir'],'int'),4);
 

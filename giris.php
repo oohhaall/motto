@@ -26,6 +26,9 @@ if($_POST['islem'] == 'giris'){
 			<?php
 	
 		
+			}else{
+			header('Location: ./'.((!empty($_GET['l']))?$_GET['l'].'.php':'')); exit;
+
 			}
 			
 		

@@ -51,6 +51,13 @@ foreach($veriler as $k){
 	$stl = ($_GET['sil']==$k['id'])?' id="kirmizi"':(($k['drm']=="0")?' id="deaktif"':'');
 	$sira++;	
 	$k['aktg'] = ($k['aktg'])?$k['aktg']:'Yok';
+	
+	if($k["sonuc"] != ""){
+		$x = '<li no="'.$k['id'].'" rel="dty" class="btn" title="İndir"><img src="images/dow_up.png" width="24" height="24" border="0" /></li>';
+	}else{
+		$x = '<li no="'.$k['id'].'" rel="dty" class="btn" title="Yükle"><img src="images/up_file.png" width="24" height="24" border="0" /></li>';
+	}
+
 	$kStr .= '<ul'.$stl.'>
 				<li class="sra">'.$sira.'</li>
 				<li class="kt">'.$k['adSoyad'].'</li>
@@ -62,6 +69,7 @@ foreach($veriler as $k){
 				<a href="'.$self.'&sil='.$k['id'].'" title="Sil"><li class="btn" style="border:none;"><img src="images/delete.png" width="24" height="24" border="0" /></li></a>
 				<a href="'.$self.'&durum='.$k['id'].$sUrl.'" title="Aktif/Deaktif"><li class="btn"><img src="images/durum'.$k['drm'].'.png" width="24" height="24" border="0" /></li></a>
 			  	<li no="'.$k['id'].'" rel="dty" class="btn" title="Göster"><img src="images/goster.png" width="24" height="24" border="0" /></li>
+			  	'.$x.'
 			  </ul>';		
 }
 
